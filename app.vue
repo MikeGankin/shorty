@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {Toaster} from "vue-sonner";
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 </script>
 
 <template>
@@ -8,5 +9,6 @@ import {Toaster} from "vue-sonner";
 			<NuxtPage/>
 		</NuxtLayout>
 		<Toaster/>
+		<SpeedInsights/>
 	</div>
 </template>
