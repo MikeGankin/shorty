@@ -20,7 +20,6 @@ const copy = async() => {
 	toast.success('Ссылка скопирована!')
 	isCopied.value = true
 }
-
 </script>
 
 <template>
