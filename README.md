@@ -1,75 +1,34 @@
-# Nuxt Minimal Starter
+# 🔗 Shorty — Сервис сокращения ссылок
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Минималистичное Nuxt 3 SPA-приложение для авторизованных пользователей, позволяющее сокращать ссылки, хранить их в
+Firebase и быстро делиться короткими URL.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## ⚙️ Технологии
+
+- [Nuxt 3](https://nuxt.com) (SPA-режим)
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [Cloud Firestore](https://firebase.google.com/docs/firestore)
+- [Pinia](https://pinia.vuejs.org/) — глобальное хранилище
+- [Vercel](https://vercel.com) — деплой фронтенда
+- [Tailwind CSS](https://tailwindcss.com) — стилизация
+
+---
+
+## 🚀 Возможности
+
+- Регистрация и авторизация пользователей
+- Хранение ссылок в Firestore под `users/{uid}/links`
+- Генерация коротких URL через `nanoid`
+- Поддержка автологина при повторном входе
+- Автоматическая подстановка email
+- Скелетоны при загрузке ссылок
+- Поддержка Vercel-деплоя
+
+---
+
+## 📦 Установка
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
