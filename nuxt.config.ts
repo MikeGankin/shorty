@@ -7,6 +7,13 @@ export default defineNuxtConfig({
 	css: ['~/assets/css/tailwind.css'],
 	ssr: false,
 
+	runtimeConfig: {
+		public: {
+			baseUrl: process.env.NUXT_PUBLIC_BASE_URL
+		}
+	},
+
+
 	plugins: [
 		'~/plugins/firebase.client.ts',
 		'~/plugins/auth.client.ts'

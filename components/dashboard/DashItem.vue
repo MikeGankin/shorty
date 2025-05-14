@@ -12,20 +12,23 @@ const props = defineProps<{
 
 const isCopied = ref(false)
 const userStore = useUserStore()
-const shortLink = computed(() => {
-	return `shorty.com/${props.link.shortCode}`
-})
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const shortLink = computed(() => `${baseUrl}/${props.link.shortCode}`)
 const copy = async() => {
 	await navigator.clipboard.writeText(shortLink.value)
 	toast.success('Ссылка скопирована!')
 	isCopied.value = true
 }
+
 </script>
 
 <template>
 	<Skeleton v-if="userStore.loading" class="w-full h-[118px] rounded-[20px]"/>
 	<Card v-else class="link-list-item px-5 py-7 grid gap-2">
-		<a :href="shortLink" target="_blank" class="text-xl col-start-1 col-end-2 text-primary underline-offset-4 hover:underline">
+		<a :href="shortLink"
+			 target="_blank"
+			 rel="noopener noreferrer" class="text-xl col-start-1 col-end-2 text-primary underline-offset-4 hover:underline">
 			{{shortLink}}
 		</a>
 		<p class="truncate w-[80%] text-xs text-muted-foreground col-start-1 col-end-2">
